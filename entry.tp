@@ -1,0 +1,73 @@
+{
+    "sdk": 6,
+    "version": 151,
+    "name": "mediamixer",
+    "id": "com.github.orangopus.mediamixer",
+    "configuration": {
+        "colorDark": "#6c6f73",
+        "colorLight": "#3d62ad"
+    },
+    "plugin_start_cmd": "node %TP_PLUGIN_FOLDER%mediamixer\\plugin.js",
+    "categories": [
+        {
+            "id": "com.github.orangopus.mediamixer.main",
+            "name": "Linux Media Mixer",
+            "imagepath": "%TP_PLUGIN_FOLDER%TouchPortalMediaMixer\\icon-24.png",
+            "actions": [
+                {
+                    "id": "com.github.orangopus.mediamixer.action.setAppVolume",
+                    "name": "Set Application Volume",
+                    "description": "Set the volume for a specific application.",
+                    "prefix": "Set volume of",
+                    "type": "communicate",
+                    "tryInline": true,
+                    "data": [
+                        {
+                            "id": "applicationName2",
+                            "type": "text",
+                            "label": "Application Name",
+                            "default": ""
+                        },
+                        {
+                            "id": "volumePercentage2",
+                            "type": "choice",
+                            "label": "Volume Percentage",
+                            "default": "50",
+                            "valueChoices": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+                        }
+                    ]
+                }
+            ],
+            "connectors": [
+                {
+                    "id": "com.github.orangopus.mediamixer.connector.APPcontrol",
+                    "name": "Volume Mixer: APP Volume slider",
+                    "format": "Control volume for {$applicationName$} at {$volumePercentage$}%",
+                    "data": [
+                        {
+                            "id": "applicationName",
+                            "type": "text",
+                            "label": "Application Name",
+                            "default": ""
+                        },
+                        {
+                            "id": "volumePercentage",
+                            "type": "choice",
+                            "label": "Volume Percentage",
+                            "default": "",
+                            "valueChoices": ["0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+                        }
+                    ]
+                }
+            ],
+            "states": [
+                {
+                    "id": "volumePercentage",
+                    "type": "text",
+                    "desc": "volumePercentage",
+                    "default": ""
+                }
+            ]
+        }
+    ]
+}

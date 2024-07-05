@@ -1,6 +1,4 @@
 ![](/linux-mediamixer.png)
-
-# mediamixer-linux
 ---
 
 ## Pre-requisites

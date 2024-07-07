@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "dbus-next": "^0.10.2",
-    "loudness": "^0.4.2",
-    "net": "^1.0.2",
-    "node-pipewire": "^1.0.16",
-    "touchportal-api": "^3.3.0",
-    "volume_supervisor": "^1.0.1",
-    "ws": "^8.17.1"
+    "touchportal-api": "^3.3.0"
   }
 }
